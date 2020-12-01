@@ -9,9 +9,10 @@ def part1(entries):
         if entries.count(1010) > 1:
             return f"1010 * 1010 = {1010 ** 2}"
     else:
-        for i in entriesset:
-            if (2020 - i) in entriesset:
-                return f"{i} * {2020 - i} = {i * (2020  - i)}"
+        entriesset.remove(1010)
+    for i in entriesset:
+        if (2020 - i) in entriesset:
+            return f"{i} * {2020 - i} = {i * (2020  - i)}"
 
 
 def part2(entries):
