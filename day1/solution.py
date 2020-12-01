@@ -5,11 +5,13 @@ def readEntries(filename="input.txt"):
 
 def part1(entries):
     entriesset = set(entries)
-    if 1010 in entriesset and entries.count(1010) > 1:
-        return f"1010 * 1010 = {1010 ** 2}"
-    for i in entriesset:
-        if (2020 - i) in entriesset:
-            return f"{i} * {2020 - i} = {i * (2020  - i)}"
+    if 1010 in entriesset:
+        if entries.count(1010) > 1:
+            return f"1010 * 1010 = {1010 ** 2}"
+    else:
+        for i in entriesset:
+            if (2020 - i) in entriesset:
+                return f"{i} * {2020 - i} = {i * (2020  - i)}"
 
 
 def part2(entries):
