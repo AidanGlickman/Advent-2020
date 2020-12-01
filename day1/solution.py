@@ -17,6 +17,8 @@ def part2(entries):
     for x, i in enumerate(entries[:-1]):
         for j in entries[x:]:
             if (2020 - (i + j)) in entriesset:
+                if (2020 - (i + j) == i and entries.count(i) == 1) or (2020 - (i + j) == j and entries.count(j) == 1):
+                    continue
                 return f"{i} * {j} * {2020 - (i + j)} = {i * j * (2020 - (i + j))}"
 
 
