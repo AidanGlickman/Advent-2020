@@ -1,6 +1,3 @@
-from os import read
-
-
 def readEntries(filename="input.txt"):
     with open(filename, "r") as filein:
         return [int(line.rstrip()) for line in filein]
