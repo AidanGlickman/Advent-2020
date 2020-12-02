@@ -28,7 +28,7 @@ def part2(entries):
 def main():
     entries = readEntries()
     print(part1(entries))
-    # print(part2(entries))
+    print(part2(entries))
 
 
 main()
