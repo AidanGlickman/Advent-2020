@@ -27,7 +27,7 @@ def main():
         for line in infile:
             count1 += part1(line)
             count2 += part2(line)
-    print(f'Part 1: {count1}\nPart2: {count2}')
+    print(f'Part 1: {count1}\nPart 2: {count2}')
 
 
 main()
