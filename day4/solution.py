@@ -39,7 +39,7 @@ def part2(passports):
                     and (2020 <= int(passDict['eyr']) <= 2030) \
                     and ((passDict['hgt'][-2:] == 'cm' and (150 <= int(passDict['hgt'][:-2]) <= 193))
                          or (passDict['hgt'][-2:] == 'in' and (59 <= int(passDict['hgt'][:-2]) <= 76))) \
-                    and passDict['hcl'][0] == '#' and len(passDict['hcl']) == 7 and int(passDict['hcl'][1:], 16) \
+                    and passDict['hcl'][0] == '#' and len(passDict['hcl']) == 7 and int(passDict['hcl'][1:], 16)+1 \
                     and passDict['ecl'] in {'amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'} \
                     and (len(passDict['pid']) == 9 and passDict['pid'].isnumeric()):
                 count += 1
