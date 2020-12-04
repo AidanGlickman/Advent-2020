@@ -33,24 +33,16 @@ def altPart1(passports):
 def part2(passports):
     count = 0
     for passDict in keyFilter(passports):
-        print(passDict)
         try:
-            if (1920 <= int(passDict['byr']) <= 2002):
-                print('BYR')
-                if (2010 <= int(passDict['iyr']) <= 2020):
-                    print('IYR')
-                    if (2020 <= int(passDict['eyr']) <= 2030):
-                        print('EYR')
-                        if ((passDict['hgt'][-2:] == 'cm' and (150 <= int(passDict['hgt'][:-2]) <= 193))
-                                or (passDict['hgt'][-2:] == 'in' and (59 <= int(passDict['hgt'][:-2]) <= 76))):
-                            print('HGT')
-                            if passDict['hcl'][0] == '#' and hex(int(passDict['hcl'][1:], 16))[2:] == passDict['hcl'][1:]:
-                                print('HCL')
-                                if passDict['ecl'] in {'amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'}:
-                                    print('ECL')
-                                    if (len(passDict['pid']) == 9 and passDict['pid'].isnumeric()):
-                                        print('PID')
-                                        count += 1
+            if (1920 <= int(passDict['byr']) <= 2002) \
+                    and (2010 <= int(passDict['iyr']) <= 2020) \
+                    and (2020 <= int(passDict['eyr']) <= 2030) \
+                    and ((passDict['hgt'][-2:] == 'cm' and (150 <= int(passDict['hgt'][:-2]) <= 193))
+                         or (passDict['hgt'][-2:] == 'in' and (59 <= int(passDict['hgt'][:-2]) <= 76))) \
+                    and passDict['hcl'][0] == '#' and hex(int(passDict['hcl'][1:], 16))[2:] == passDict['hcl'][1:] \
+                    and passDict['ecl'] in {'amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'} \
+                    and (len(passDict['pid']) == 9 and passDict['pid'].isnumeric()):
+                count += 1
         except:
             continue
 
