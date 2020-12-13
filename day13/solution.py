@@ -49,8 +49,7 @@ def modInv(a, b):
 def part2(ids):
     n = []
     a = []
-    for i in range(0, len(ids)):
-        t = ids[i]
+    for i, t in enumerate(ids):
         if t != "x":
             n.append(int(t))
             a.append(int(t)-i)
