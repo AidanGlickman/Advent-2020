@@ -8,6 +8,8 @@ def readNotes(inpath="input.txt"):
 
 
 def calcDist(earliest, i):
+    if earliest % i == 0:
+        return 0
     return i * (earliest // i + 1) - earliest
 
 
