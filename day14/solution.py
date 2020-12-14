@@ -14,9 +14,9 @@ def part1(insts):
             ind = inst[0][4:-1]
             val = str(bin(int(inst[1])))[2:]
             val = "0" * (len(curr) - len(val)) + val
-            for i, j in zip(range(len(curr) - len(val), len(curr)), val):
+            for i in range(len(curr)):
                 if curr[i] == "X":
-                    curr[i] = j
+                    curr[i] = val[i]
             vals[ind] = int("".join(curr), 2)
     return sum(vals.values())
 
