@@ -13,9 +13,9 @@ def part1(insts):
             curr = list(mask)
             ind = inst[0][4:-1]
             val = str(bin(int(inst[1])))[2:]
-            for i, j in zip(range(len(curr) - len(val), len(curr)), range(len(val))):
+            for i, j in zip(range(len(curr) - len(val), len(curr)), val):
                 if curr[i] == "X":
-                    curr[i] = val[j]
+                    curr[i] = j
             vals[ind] = int("".join(["0" if x == "X" else x for x in curr]), 2)
     return sum(vals.values())
 
@@ -32,11 +32,13 @@ def part2(insts):
             ind = "0" * (len(curr) - len(ind)) + ind
             val = int(inst[1])
             floating = []
-            for i, j in zip(range(len(curr)), range(len(ind))):
+
+            for i in range(len(curr)):
                 if curr[i] == "0":
-                    curr[i] = ind[j]
+                    curr[i] = ind[i]
                 if curr[i] == "X":
                     floating.append(i)
+
             for i in range(2 ** len(floating)):
                 currind = curr[:]
                 binstr = str(bin(i))[2:]
