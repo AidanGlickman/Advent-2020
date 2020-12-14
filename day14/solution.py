@@ -13,10 +13,11 @@ def part1(insts):
             curr = list(mask)
             ind = inst[0][4:-1]
             val = str(bin(int(inst[1])))[2:]
+            val = "0" * (len(curr) - len(val)) + val
             for i, j in zip(range(len(curr) - len(val), len(curr)), val):
                 if curr[i] == "X":
                     curr[i] = j
-            vals[ind] = int("".join(["0" if x == "X" else x for x in curr]), 2)
+            vals[ind] = int("".join(curr), 2)
     return sum(vals.values())
 
 
