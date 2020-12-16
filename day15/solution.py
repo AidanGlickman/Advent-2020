@@ -1,7 +1,7 @@
 START = [8, 11, 0, 19, 1, 2]
 
 
-def part1(start, end):
+def solve(start, end):
     last = {}
     for i in range(len(start)):
         last[start[i]] = i
@@ -14,7 +14,7 @@ def part1(start, end):
 
 
 def main():
-    print(f"Part 1: {part1(START, 2020)}\nPart 2: {part1(START, 30000000)}")
+    print(f"Part 1: {solve(START, 2020)}\nPart 2: {solve(START, 30000000)}")
 
 
 main()
