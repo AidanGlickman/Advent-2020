@@ -52,8 +52,7 @@ def part2(rules, ours, nearby):
     indToRule = [None for _ in colToRule]
 
     for j in sorted(colToRule, key=colToRule.get):
-        rule = list(colToRule[j] - set(indToRule))[0]
-        indToRule[j] = rule
+        indToRule[j] = list(colToRule[j] - set(indToRule))[0]
 
     ans = 1
     for i, val in enumerate(ours):
