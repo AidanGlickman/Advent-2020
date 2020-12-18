@@ -21,7 +21,7 @@ def part1(exps):
 
 
 class Num2(int):
-    def __add__(self, b):
+    def __sub__(self, b):
         return Num2(self.real * b.real)
 
     def __mul__(self, b):
@@ -29,7 +29,7 @@ class Num2(int):
 
 
 def part2(exps):
-    replaced = [exp.replace('*', '-').replace('+', '*').replace('-', '+')
+    replaced = [exp.replace('*', '-').replace('+', '*')
                 for exp in exps]
     return sum([eval(re.sub(r"(\d+)", r"Num2(\1)", repEx)) for repEx in replaced])
 
