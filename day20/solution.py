@@ -130,7 +130,6 @@ def parseMonster():
 
 def checkMonsters(grid):
     monsterLocs, maxX, maxY = parseMonster()
-    print(monsterLocs, maxX, maxY)
 
     monsterSpots = set()
     for y in range(len(grid)):
