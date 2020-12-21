@@ -44,15 +44,13 @@ def part2(foods):
 
     found = set()
     allergenMap = []
-    while True:
+    while len(allergenMap) < len(possible.keys()):
         for allergen, ingredients in possible.items():
             if len(ingredients - found) == 1:
-                o = min(ingredients - found)
-                allergenMap.append((allergen, o))
-                found.add(o)
+                ing = min(ingredients - found)
+                allergenMap.append((allergen, ing))
+                found.add(ing)
                 break
-        else:
-            break
 
     return ",".join(x[1] for x in sorted(allergenMap))
 
