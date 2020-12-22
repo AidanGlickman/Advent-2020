@@ -51,8 +51,8 @@ class Game2:
 
 def part2(decks):
     game = Game2(decks[0], decks[1])
-    game.game()
-    winner = game.deck1 if game.deck1 else game.deck2
+    winnerNum = game.game()
+    winner = game.deck1 if winnerNum == 1 else game.deck2
     return getScore(winner)
 
 
