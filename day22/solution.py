@@ -41,8 +41,8 @@ class Game2:
                 else:
                     self.deck2 += [curr2, curr1]
             else:
-                new_game = Game2(self.deck1[:curr1], self.deck2[:curr2]).game()
-                if new_game == 1:
+                sub = Game2(self.deck1[:curr1], self.deck2[:curr2]).game()
+                if sub == 1:
                     self.deck1 += [curr1, curr2]
                 else:
                     self.deck2 += [curr2, curr1]
