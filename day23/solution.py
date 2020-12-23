@@ -24,20 +24,22 @@ class Node:
 def part2(cups):
     lookup = {}
 
-    nodes = [Node(c) for c in cups]
+    prev = None
+    for i in range(len(cups)-1, -1, -1):
+        new = Node(cups[i])
+        new.next = prev
+        lookup[cups[i]] = new
+        prev = new
 
-    for i in range(10, 1000001):
-        nodes.append(Node(i))
+    for i in range(1000000, 9, -1):
+        new = Node(i)
+        new.next = prev
+        lookup[i] = new
+        prev = new
 
-    for a, b in zip(nodes, nodes[1:]):
-        a.next = b
+    lookup[cups[-1]].next = lookup[10]
 
-    nodes[-1].next = nodes[0]
-
-    for node in nodes:
-        lookup[node.val] = node
-
-    cur = nodes[0]
+    cur = lookup[cups[0]]
 
     for _ in range(10000000):
         remove1 = cur.next
