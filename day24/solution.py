@@ -56,7 +56,7 @@ def part2(data):
                     neighbored[curr] += 1
         newBlack = set()
         for tile in neighbored:
-            if (tile in black and neighbored[tile] == 1) or \
+            if (tile in black and neighbored[tile] in [1, 2]) or \
                     (tile not in black and neighbored[tile] == 2):
                 newBlack.add(tile)
         black = newBlack
