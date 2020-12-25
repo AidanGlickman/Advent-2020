@@ -21,7 +21,6 @@ def trans(loop, pub):
     for _ in range(loop):
         val *= pub
         val %= 20201227
-        loop += 1
     return val
 
 
@@ -31,7 +30,7 @@ def part1(cardPub, doorPub):
 
 
 def part2(cardPub, doorPub):
-    return
+    return "DONE!"
 
 
 def main():
